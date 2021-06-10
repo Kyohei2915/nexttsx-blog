@@ -44,6 +44,24 @@ export default function Home({
           ))}
         </ul>
       </section>
+
+      <style jsx>{`
+        .post-teaser {
+          margin-bottom: 2em;
+        }
+
+        .post-teaser h2 a {
+          text-decoration: none;
+        }
+
+        .home-archive {
+          margin: 3em;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      `}</style>
+      
     </Layout>
   )
 }
