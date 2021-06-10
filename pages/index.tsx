@@ -22,10 +22,9 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Heloo]</p>
+        <h1>Hello! I'm not an engineer. But I wanted to make a website as a hobby, so I made this site! </h1>
         <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+         Please corect me. When I make misstakes!
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -61,7 +60,7 @@ export default function Home({
           justify-content: center;
         }
       `}</style>
-      
+
     </Layout>
   )
 }
