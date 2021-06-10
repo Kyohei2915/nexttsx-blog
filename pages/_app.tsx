@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import { AppProps } from 'next/app'
+//import { AppProps } from 'next/app'
 import React from 'react'
 
 
