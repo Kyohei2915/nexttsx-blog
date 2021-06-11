@@ -1,50 +1,22 @@
-import Head from 'next/head'
-//import Image from 'next/image'
-import styles from './layout.module.css'
-import Link from 'next/link'
-import React from 'react'
+import Header from '../components/Header';
+import Meta from '../components/Meta';
 
-const name = 'Kyohei'
-export const siteTitle = 'Non-Engineer-Blog'
+type Props = {
+  children: React.ReactNode;
+  pageTitle?: string;
+};
 
-
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
+const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-     
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+    <>
+      <Meta pageTitle={pageTitle} />
 
-      <footer>
-        &copy; {siteTitle}
-      </footer>
-    </div>
-  )
-}
+      <div className="max-w-prose mx-auto px-4">
+        <Header />
+        <main className="pt-4 pb-12">{children}</main>
+      </div>
+    </>
+  );
+};
+
+export default Layout;
