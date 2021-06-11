@@ -4,7 +4,6 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
-import 'tailwindcss/tailwind.css'
 
 const name = 'Kyohei'
 export const siteTitle = 'Non-Engineer-Blog'
@@ -81,61 +80,6 @@ export default function Layout({
       <footer>
         &copy; {siteTitle}
       </footer>
-
-      <style jsx>{`
-        .page {
-          padding: 2em 1em;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        header {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 0 4em;
-        }
-
-        .site-title a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        footer {
-          margin-top: 4em;
-          padding-top: 2em;
-          padding-bottom: 2em;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: 'Noto Sans JP', -apple-system, "Segoe UI", "Helvetica Neue",
-            "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-          color: #222;
-        }
-
-        img,
-        iframe {
-          max-width: 100%;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-          font-family: Montserrat, -apple-system, "Segoe UI", "Helvetica Neue",
-            "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   )
 }
