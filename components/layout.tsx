@@ -1,6 +1,6 @@
 import Head from 'next/head'
 //import Image from 'next/image'
-import styles from './layout.module.css'
+//import styles from './layout.module.css'
 import Link from 'next/link'
 import React from 'react'
 //import Header from '../components/Header';
@@ -16,7 +16,7 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
   return (
-    <div className={styles.container}>
+    <div className='Test'>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -35,7 +35,7 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
      
       <main>{children}</main>
       {!pageTitle&& (
-        <div className={styles.backToHome}>
+        <div className={'backToHome'}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
