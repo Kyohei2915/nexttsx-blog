@@ -1,61 +1,59 @@
-import { GetStaticProps } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+import { getSortedPostsData } from '../lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
+import { GetStaticProps } from 'next'
+import 'tailwindcss/tailwind.css';
+import Header from '../components/Header'
 
-import Layout from '../components/layout';
-import Thumbnail from '../components/Thumbnail';
-import { IPost } from '../types/post';
-import { SITE_NAME } from '../utils/constants';
-import { getAllPosts } from '../utils/mdxUtils';
-
-type Props = {
-  posts: IPost[];
-};
-
-const Index: React.FC<Props> = ({ posts }: Props) => {
+export default function Home({
+  allPostsData
+}: {
+  allPostsData: {
+    date: string
+    title: string
+    id: string
+  }[]
+}) {
   return (
-    <Layout>
+    <Layout home>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{siteTitle}</title>
       </Head>
-
-      <h1 className="text-4xl font-bold mb-4">Recipes</h1>
-
-      <div className="space-y-12">
-        {posts.map((post) => (
-          <div key={post.slug}>
-            <div className="mb-4">
-              <Thumbnail
-                slug={post.slug}
-                title={post.title}
-                src={post.thumbnail}
-              />
-            </div>
-
-            <h2 className="text-2xl font-bold mb-4">
-              <Link href={`/posts/${post.slug}`}>
-                <a>{post.title}</a>
+      <section className={utilStyles.headingMd}>
+        <p>[Your Self Introduction]</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this in{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
               </Link>
-            </h2>
-
-            <p className="dark:text-gray-300">{post.description}</p>
-          </div>
-        ))}
-      </div>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
-  );
-};
-
-export default Index;
+  )
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts([
-    'slug',
-    'date',
-    'thumbnail',
-    'title',
-    'description',
-  ]);
-
-  return { props: { posts } };
-};
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
