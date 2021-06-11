@@ -3,8 +3,6 @@ import Head from 'next/head'
 //import styles from './layout.module.css'
 import Link from 'next/link'
 import React from 'react'
-//import Header from '../components/Header';
-//import Meta from '../components/Meta';
 
 const name = 'Kyohei'
 export const siteTitle = 'Non-Engineer-Blog'
