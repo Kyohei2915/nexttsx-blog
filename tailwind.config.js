@@ -1,28 +1,14 @@
 module.exports = {
-  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
-  darkMode: 'class', // or 'media' or 'class'
+  purge: [
+    './src/**/*.tsx',
+    './src/**/*.tsx',
+  ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      typography: (theme) => ({
-        dark: {
-          css: {
-            color: theme('colors.gray.300'),
-            h1: {
-              color: theme('colors.gray.100'),
-            },
-            h2: {
-              color: theme('colors.gray.100'),
-            },
-          },
-        },
-      }),
-    },
+    extend: {},
   },
   variants: {
-    extend: {
-      typography: ['dark'],
-    },
+    extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
-  plugins: [require('@tailwindcss/forms')],
-};
+  plugins: [],
+}
