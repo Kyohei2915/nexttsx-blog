@@ -5,8 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Directions from '../../components/Directions';
-import Ingredients from '../../components/Ingredients';
-import Layout from '../../components/Layout';
+import Ingredients from '../../components/ingredients';
+import Layout from '../../components/layout';
 import Thumbnail from '../../components/Thumbnail';
 import { IPost } from '../../types/post';
 import { SITE_URL } from '../../utils/constants';

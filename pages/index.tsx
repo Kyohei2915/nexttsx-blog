@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Thumbnail from '../components/Thumbnail';
 import { IPost } from '../types/post';
 import { SITE_NAME } from '../utils/constants';
