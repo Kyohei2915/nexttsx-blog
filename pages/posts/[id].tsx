@@ -1,44 +1,90 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-export default function Post({
-  postData
-}: {
-  postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
-}) {
+import Directions from '../../components/Directions';
+import Ingredients from '../../components/Ingredients';
+import Layout from '../../components/Layout';
+import Thumbnail from '../../components/Thumbnail';
+import { IPost } from '../../types/post';
+import { SITE_URL } from '../../utils/constants';
+import { getPost, getAllPosts } from '../../utils/mdxUtils';
+
+type Props = {
+  source: MDXRemoteSerializeResult;
+  frontMatter: Omit<IPost, 'slug'>;
+};
+
+const components = {
+  Ingredients,
+  Directions,
+  Tips: dynamic(() => import('../../components/Tips')),
+};
+
+const PostPage: React.FC<Props> = ({ source, frontMatter }: Props) => {
+  const ogImage = SITE_URL + frontMatter.thumbnail;
+
   return (
-    <Layout>
+    <Layout pageTitle={frontMatter.title}>
       <Head>
-        <title>{postData.title}</title>
+        <meta
+          name="description"
+          content={frontMatter.description}
+          key="description"
+        />
+        <meta
+          property="og:description"
+          content={frontMatter.description}
+          key="ogDescription"
+        />
+        <meta property="og:image" content={ogImage} key="ogImage" />
       </Head>
-      <article>
-         <Date dateString={postData.date} />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+      <article className="prose prose-green dark:prose-dark">
+        <div className="mb-4">
+          <Thumbnail title={frontMatter.title} src={frontMatter.thumbnail} />
+        </div>
+
+        <h1>{frontMatter.title}</h1>
+
+        <p className="font-bold">yield: {frontMatter.yields}</p>
+
+        <p>{frontMatter.description}</p>
+
+        <MDXRemote {...source} components={components} />
       </article>
     </Layout>
-  )
-}
+  );
+};
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
-  return {
-    paths,
-    fallback: false
-  }
-}
+export default PostPage;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string)
+  const { content, data } = getPost(params?.slug as string);
+
+  const mdxSource = await serialize(content, { scope: data });
+
   return {
     props: {
-      postData
-    }
-  }
-}
+      source: mdxSource,
+      frontMatter: data,
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = getAllPosts(['slug']);
+
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
