@@ -4,6 +4,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
+import 'tailwindcss/tailwind.css'
 
 const name = 'Kyohei'
 export const siteTitle = 'Non-Engineer-Blog'
