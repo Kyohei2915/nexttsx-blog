@@ -21,8 +21,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "tailwind.config.js", "stylelint.config.js"  ],
+    "**/*.tsx"  ],
   "exclude": [
     "node_modules"
   ]
