@@ -3,7 +3,6 @@ import { useTheme } from 'next-themes';
 import Switch from 'react-switch';
 import { IconContext } from 'react-icons';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import 'tailwindcss/tailwind.css';
 
 
 const ThemeSwitch: React.FC = () => {

@@ -26,7 +26,7 @@ export default function Post({
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+       </article>
     </Layout>
   )
 }

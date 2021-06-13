@@ -5,8 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
-import 'tailwindcss/tailwind.css';
-import Header from '../components/Header'
+
 
 export default function Home({
   allPostsData
@@ -18,7 +17,7 @@ export default function Home({
   }[]
 }) {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
