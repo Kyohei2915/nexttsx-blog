@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-//import Header from './Header'
-//import Footer from './footer'
+//import Image from 'next/image'
+
+
 
 const name = 'Kyohei'
 export const siteTitle = 'Next.js Sample Website'
@@ -17,7 +16,6 @@ export default function Layout({
 }) {
   return (
     <div className="flex flex-col min-h-screen">
-    <div className={styles.container}>
     <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -34,7 +32,6 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>{children}</main>
-    </div>
   </div>
   )
 }

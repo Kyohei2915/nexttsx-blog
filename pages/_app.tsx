@@ -11,11 +11,9 @@ import 'tailwindcss/tailwind.css';
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <><Header /><Layout>
+    <><Header /><ThemeProvider attribute="class">
+    </ThemeProvider><Layout>
       <Head>
-      <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-      </ThemeProvider>
         <title>Next.js Starter Tailwind</title>
         <meta
           name="Description"
