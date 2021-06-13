@@ -1,6 +1,7 @@
 import Head from 'next/head'
 //import Image from 'next/image'
-import Header  from '../components/Header'
+import Header from '../components/Header'
+//import Footer from '../components/footer';
 
 type Props = {
   children: React.ReactNode;
@@ -9,8 +10,8 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-800">
+    <Header />
     <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,7 +26,7 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
         />
         <meta name="og:title" content={pageTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+    </Head>
       <main>{children}</main>
   </div>
   )
