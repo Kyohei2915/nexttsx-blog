@@ -27,11 +27,11 @@ export default function Post({
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
        </article>
-       <h2>
+      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
         <Link href="/">
-          <a>Back to home</a>
+          Back to home
         </Link>
-      </h2>
+      </button>
     </Layout>
   )
 }
