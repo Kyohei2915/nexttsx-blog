@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import Header from '../components/Header'
+//import Header from '../components/Header'
+import Link from "next/link";
+import ThemeSwitch from "./theme-switch";
 //import Footer from '../components/footer';
 
 type Props = {
@@ -10,7 +12,17 @@ type Props = {
 const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-800">
-    <Header />
+        <header className="py-2">
+      <div className="flex justify-between items-center">
+            <Link href="/">
+              <h1 className="text-xl md:text-xl font-bold ml-3 text-gray-900 dark:text-white">
+                Kyohei Blog
+              </h1>
+            </Link>
+            <ThemeSwitch />
+          </div>
+        </header>
+      );
     <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
