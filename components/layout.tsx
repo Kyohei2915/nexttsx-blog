@@ -22,7 +22,6 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
             <ThemeSwitch />
           </div>
         </header>
-      );
     <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
