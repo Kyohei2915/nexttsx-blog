@@ -29,7 +29,7 @@ export default function Post({
        </article>
       <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
         <Link href="/">
-          Back to home
+          ← Back to home
         </Link>
       </button>
     </Layout>
