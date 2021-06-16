@@ -20,18 +20,18 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article className="prose prose-green dark:prose-dark">
-      <h1 className="title-font text-xl font-medium text-gray-900 dark:text-white mb-3">{postData.title}</h1>
-        <div className="text-gray-500 pb-2 mb-2 border-b-2 ">
+      <article className="prose prose-green dark:prose-dark pt-24">
+      <h1 className="title-font text-xl font-medium text-gray-900 dark:text-white mb-3 py-2 px-4">{postData.title}</h1>
+        <div className="text-gray-500 pb-2 mb-2 px-4">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="px-4" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
        </article>
-      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+      <p className="text-green-500  dark:text-white font-bold py-10 px-4">
         <Link href="/">
           ← Back to home
         </Link>
-      </button>
+      </p>
     </Layout>
   )
 }

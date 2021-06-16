@@ -23,15 +23,9 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-    <section className="flex-1 overflow-y-auto bg-white dark:bg-gray-800 rounded-xl ">
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-    </section>
-    <section className="text-gray-600 body-font">
-      <h3 className="text-4xl font-normal leading-normal mt-0 mb-5 text-emerald-800">Blog</h3>
+
+    <section className="text-gray-600 body-font pt-24">
+      <h3 className="text-xl font-bold leading-normal mt-0 mb-5 text-emerald-800 dark:text-white px-4">My Blog</h3>
       <ul className="block mt-1 leading-tight font-medium">
           {allPostsData.map(({ id, date, title, contentHtml }) => (
       <div className="container px-5 py-10 mx-auto">
@@ -61,7 +55,7 @@ export default function Home({
     </section>
 
     
-    <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+    <div className="bg-white px-4 py-6 flex items-center justify-between border-t border-gray-200 sm:px-6">
       <div className="flex-1 flex justify-between sm:hidden"/*ページネーション機能*/>
         <a href="#" className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
           Previous
