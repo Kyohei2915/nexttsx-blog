@@ -13,8 +13,8 @@ function App({ Component, pageProps }: AppProps) {
       <div className="flex justify-between items-center">
         <title>{siteTitle}</title>
         <meta
-          name="Description"
-          content="A Next.js starter styled using Tailwind CSS." />
+          name={siteTitle}
+          content="プログラミング知識0の非エンジニアだけどNext.jsとやらでブログを制作しました。プログラミングや日常のできごとに関して記事にしていきます。" />
       </div>
       </Head>
       <Component {...pageProps} />

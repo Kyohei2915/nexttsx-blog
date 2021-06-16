@@ -36,7 +36,7 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
         />
         <meta name="og:title" content={pageTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-    </Head>
+      </Head>
       <main>{children}</main>
 
   <footer className="text-gray-400 bg-gray-900 body-font">
