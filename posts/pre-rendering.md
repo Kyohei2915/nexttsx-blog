@@ -12,7 +12,8 @@ Importantly, Next.js lets you **choose** which pre-rendering form to use for eac
 
 ----
 test|*test*
-----
 
 #test Hello
-##midashi`inline`
+##midashi
+
+`inline`
