@@ -3,7 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
-import 'tailwindcss/tailwind.css'
+//import 'tailwindcss/tailwind.css'
+import '@tailwindcss/typography'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
