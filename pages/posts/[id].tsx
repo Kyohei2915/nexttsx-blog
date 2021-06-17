@@ -27,7 +27,7 @@ export default function Post({
         </div>
         <div className="px-4 text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
        </article>
-      <p className="text-green-500  dark:text-white font-bold py-10 px-4">
+      <p className="text-green-500 font-bold py-10 px-4">
         <Link href="/">
           ← Back to home
         </Link>
