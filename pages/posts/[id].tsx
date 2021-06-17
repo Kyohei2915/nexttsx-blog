@@ -4,6 +4,7 @@ import Date from '../../components/date'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Layout from '../../components/layout';
 import Link from 'next/link';
+import '@tailwindcss/typography'
 
 
 export default function Post({
