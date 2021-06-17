@@ -25,7 +25,7 @@ export default function Post({
         <div className="text-gray-500 pb-2 mb-2 px-4">
           <Date dateString={postData.date} />
         </div>
-        <div className="px-4 dark:text-white" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="px-4 text-gray-900 dark:text-white" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
        </article>
       <p className="text-green-500  dark:text-white font-bold py-10 px-4">
         <Link href="/">
