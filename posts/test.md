@@ -1,27 +1,35 @@
 ---
-title: 'Next.jsでブログを作成した話'
-date: '2021-06-09'
+title: "test"
+date: "2021-07-01"
 ---
 
-こんにちは。これはテストです。
+ここはダークモードで白文字に変わります
 
-<h1>見出し</h1>
+# ここがダークモードで黒文字になるのを改善したいです h1
 
-- これはテストです
+- ヘッダーにかぶってしまいます。
+1. 番号付リストもなってしまいます
 
-```      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            pageTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={pageTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <main>{children}</main>```
+`inlineもうまく表示できません`
+
+**太字にした場合もダークモードでは黒字のままになってしまいます**
+
+
+korewatest
+```import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+class MyDocument extends Document {
+  render(): React.ReactElement {
+    return (
+      <Html>
+        <Head />
+        <body className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;```
