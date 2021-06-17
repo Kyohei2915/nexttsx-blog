@@ -3,32 +3,52 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {
-        dark: "#24283b",
-      },
-
       typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            color: theme("colors.gray.900"),
-            a: {
-              color: theme("colors.blue.700"),
-              "&:hover": {
-                color: theme("colors.blue.700"),
-                textDecoration: "none",
-              },
-            },
-          },
-        },
-
+        DEFAULT: {},
         dark: {
           css: {
-            color: "#7982a9",
+            color: theme('colors.gray.200'),
             a: {
-              color: "#9ECE6A",
-              "&:hover": {
-                color: "#9ECE6A",
+              color: theme('colors.gray.200'),
+              '&:hover': {
+                color: theme('colors.gray.200'),
               },
+            },
+            a: {
+              color: theme('colors.gray.200'),
+            },
+            h1: {
+              color: theme('colors.gray.200'),
+            },
+            h2: {
+              color: theme('colors.gray.200'),
+            },
+            h3: {
+              color: theme('colors.gray.200'),
+            },
+            h4: {
+              color: theme('colors.gray.200'),
+            },
+            h5: {
+              color: theme('colors.gray.200'),
+            },
+            h6: {
+              color: theme('colors.gray.200'),
+            },
+            th: {
+              color: theme('colors.gray.200'),
+            },
+            strong: {
+              color: theme('colors.gray.200'),
+            },
+            code: {
+              color: theme('colors.gray.200'),
+            },
+            figcaption: {
+              color: theme('colors.gray.200'),
+            },
+            blockquote: {
+              color: theme('colors.gray.200'),
             },
           },
         },

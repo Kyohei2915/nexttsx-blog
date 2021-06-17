@@ -13,7 +13,7 @@ const siteTitle = "Kyohei Blog"
 
 const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-gray-800">
+    <div className="container mx-auto flex flex-col h-screen bg-white dark:bg-gray-800">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -30,7 +30,7 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-        <header className="fixed flex w-full p-3 bg-teal-500 bg-green-500 dark:bg-green-500">
+        <header className="container mx-auto fixed flex p-3 bg-teal-500 bg-green-500 dark:bg-green-500">
           <div className="flex items-center text-white">
             <svg className="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
               <Link href="/"><span className="font-semibold text-3xl tracking-tight">{siteTitle}</span></Link>
@@ -52,7 +52,7 @@ const Layout: React.FC<Props> = ({ children, pageTitle }: Props) => {
              <Link href="/"><span className="ml-3 text-xl">{siteTitle}</span></Link>
             </a>
             <p className="text-sm text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2021 {siteTitle} —
-              <Link href="/">
+              <Link href="https://twitter.com/kyohei_k2915">
               <a className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@Kyohei</a>
               </Link>
             </p>

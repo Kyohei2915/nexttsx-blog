@@ -3,6 +3,10 @@ title: "test"
 date: "2021-06-17"
 ---
 
+article　追加テスト
+
+<article class="text-gray-900 dark:text-white">
+
 ここはダークモードで白文字に変わります
 
 # ここがダークモードで黒文字のままの状況を改善したいです
@@ -15,8 +19,12 @@ date: "2021-06-17"
 
 **太字にした場合もダークモードでは黒字のままになってしまいます**
 
+</article>
 
 ここは問題なく表示できます。
+
+
+
 ```import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
@@ -34,3 +42,4 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;```
+
