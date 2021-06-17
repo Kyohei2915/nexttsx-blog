@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
 import { title } from 'process'
-//import Footer from '../components/footer'
 
 const siteTitle = "Kyohei Blog"
 
