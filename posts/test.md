@@ -3,9 +3,6 @@ title: "test"
 date: "2021-06-17"
 ---
 
-article　追加テスト
-
-<article class="text-gray-900 dark:text-white">
 
 ここはダークモードで白文字に変わります
 
@@ -19,7 +16,6 @@ article　追加テスト
 
 **太字にした場合もダークモードでは黒字のままになってしまいます**
 
-</article>
 
 ここは問題なく表示できます。
 
